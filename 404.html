@@ -26,7 +26,7 @@
                 var path = window.location.pathname;
                 var query = window.location.search;
                 var hash = window.location.hash;
-                var newPath = '/cleanops-test-website/'; // Your base path
+                var newPath = '/'; // Your base path
                 var newUrl = newPath + '?p=' + encodeURIComponent(path + query) + hash;
                 sessionStorage.setItem('redirect', newUrl);
                 window.location.replace(newUrl);
