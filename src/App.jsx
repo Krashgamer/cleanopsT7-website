@@ -425,7 +425,12 @@ function App() {
                             </div>
                         </section>
 
-                        <div id="disclaimer" className="py-10 text-center text-sm text-gray-500 border-t border-gray-800/50">
+                        <div className="py-10 text-center text-sm text-gray-500 border-t border-gray-800/50">
+                            <div className="mb-4 flex flex-wrap justify-center gap-x-6 gap-y-2">
+                                <a href={`${import.meta.env.BASE_URL}documents/gdpr.html`} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400">GDPR Policy</a>
+                                <a href={`${import.meta.env.BASE_URL}documents/privacy-by-design.html`} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400">Privacy by Design</a>
+                                <a href={`${import.meta.env.BASE_URL}documents/tos.html`} target="_blank" rel="noopener noreferrer" className="hover:underline text-gray-400">Terms of Service</a>
+                            </div>
                             <p className="font-bold mb-2">UNOFFICIAL COMMUNITY PROJECT</p>
                             <p>Clean Ops is a community-developed patch and is not affiliated with, endorsed, or sponsored by Activision Publishing, Inc., Treyarch, or any of their affiliates or subsidiaries.</p>
                         </div>
