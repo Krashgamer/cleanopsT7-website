@@ -75,12 +75,13 @@
 <body>
     <div class="container">
         <h1>Cleanops BO3 Patch - GDPR Policy</h1>
+        <p><strong>Last Updated: June 20, 2025</strong></p>
         <p>This document outlines the privacy practices of the Cleanops BO3 Patch ("the Patch") with regard to the
             collection, processing, and storage of personal data from its users, in compliance with the General Data
             Protection Regulation (GDPR) (EU) 2016/679.</p>
 
         <h2>1. Introduction</h2>
-        <p>The Cleanops BO3 Patch processes personal data as described in this policy. By using the Patch, you
+        <p>The Cleanops BO3 Patch processes personal data as described in this policy.<br>By using the Patch, you
             acknowledge the terms outlined herein.</p>
 
         <h2>2. Data Controller</h2>
@@ -94,7 +95,8 @@
             <li><strong>Steam ID (Steam Account Identifier):</strong> A unique identifier associated with your Steam
                 account.</li>
             <li><strong>IP Address (Internet Protocol Address):</strong> A unique numerical label assigned to every
-                device connected to a computer network.</li>
+                device connected to a computer network. To enhance user privacy, IP addresses are pseudonymized through
+                a salted SHA256 hash.</li>
         </ul>
 
         <h2>4. Purpose and Legal Basis for Data Collection</h2>
@@ -112,10 +114,9 @@
             fundamental rights and freedoms.</p>
 
         <h2>5. Data Retention</h2>
-        <p>Your personal data (Steam ID and IP address) collected for the stated purposes will be retained for a period
-            strictly necessary to fulfill those purposes, or as required by applicable law.</p>
-        <p>Typically, data will be retained for a maximum of as long as the Patch is actively supported and maintained
-            from the last detected usage. After this period, the data will be securely deleted or anonymized.</p>
+        <p>Your personal data (Steam ID and pseudonymized IP address) collected for the stated purposes will be retained
+            for a period strictly necessary to fulfill those purposes, or as required by applicable law. This data is
+            retained for a maximum of 3 days. After this period, the data will be securely deleted or anonymized.</p>
 
         <h2>6. Data Sharing and Disclosure</h2>
         <p>We may share your personal data in the following limited circumstances:</p>
@@ -126,10 +127,10 @@
                 <li><strong>Cloudflare:</strong> Used for network performance, security, and potentially as a proxy for
                     API calls, which may involve processing IP addresses. Transfers to Cloudflare, Inc. (USA) are based
                     on EU Standard Contractual Clauses (2021/914/EU), Module 2, along with supplementary measures.</li>
-                <li>Oracle Cloud VM: Used for server infrastructure and data storage (e.g., databases for anti-cheat and
-                    analytics). The Oracle server is based in Germany, meaning data processed via this service remains
-                    within the EEA.These providers are contractually bound to process data only on our behalf and in
-                    accordance with applicable data protection laws.</li>
+                <li><strong>Oracle Cloud VM:</strong> Used for server infrastructure and data storage (e.g., databases
+                    for anti-cheat and analytics). The Oracle server is based in Germany, meaning data processed via
+                    this service remains within the EEA.These providers are contractually bound to process data only on
+                    our behalf and in accordance with applicable data protection laws.</li>
             </ul>
             <li><strong>Legal Obligations:</strong> We may disclose your personal data if required by law or in response
                 to valid requests by public authorities.</li>
@@ -175,7 +176,8 @@
 
         <h2>10. Security Measures</h2>
         <p>We implement appropriate technical and organizational measures to protect your personal data against
-            unauthorized access, alteration, disclosure, or destruction.</p>
+            unauthorized access, alteration, disclosure, or destruction. These measures include the pseudonymization of
+            data, such as hashing IP addresses with a salt.</p>
 
         <h2>11. Data Breach Notification</h2>
         <p>In the unlikely event of a personal data breach that is likely to result in a high risk to your rights and
@@ -193,7 +195,6 @@
         <p>For questions or concerns about this Privacy Policy or our data processing practices, please contact us at:
         </p>
         <p>privacy@cleanops.dev</p>
-        <p>Last Updated: June 13, 2025</p>
     </div>
 </body>
 
