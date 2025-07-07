@@ -334,11 +334,12 @@ function App() {
                                     <li>Execute your created shortcut (You will not have to manually start the game).</li>
                                 </ol>
                                 <p>If you encounter any issues, please check the <a href="#faq" onClick={(e) => handleSmoothScroll(e, '#faq')} className="text-brand-purple hover:underline cursor-pointer">FAQ section</a> or join our <a href="https://discord.gg/exUnsW2eaa" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline">Discord server</a> for support.</p>
+                                <p className="text-sm text-gray-400 mt-2">Please be aware that Clean Ops T7 is not an open source tool.</p>
                             </motion.div>
 
                             {/* YouTube Embed */}
                             <motion.div
-                                className="mt-16 aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg shadow-2xl border-2 border-gray-700/50"
+                                className="mt-8 aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg shadow-2xl border-2 border-gray-700/50"
                                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeIn}
                             >
                                 <iframe
