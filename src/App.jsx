@@ -328,18 +328,20 @@ function App() {
                             >
                                 <p>Installing Clean Ops is quick and easy. Follow the steps below or watch our video guide to get started:</p>
                                 <ol className="list-decimal list-inside space-y-2 pl-4">
-                                    <li>Download the <code className="bg-gray-700 px-1 rounded">cleanopsT7.exe</code> from <a href="https://github.com/notnightwolf/cleanopsT7/releases/download/1.1/cleanopsT7.exe" className="text-brand-purple hover:underline" target="_blank" rel="noopener noreferrer">here</a>.</li>
+                                    <li>Download the <code className="bg-gray-700 px-1 rounded">cleanopsT7_updater.exe</code> from <a href="https://github.com/notnightwolf/cleanopsT7/releases/download/2.0/cleanopsT7_updater.exe" className="text-brand-purple hover:underline" target="_blank" rel="noopener noreferrer">here</a>.</li>
                                     <li>Move the <code className="bg-gray-700 px-1 rounded">.exe</code> into your Black Ops 3 directory (usually located in <code className="bg-gray-700 px-1 rounded break-all">C:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III</code>).</li>
                                     <li>Create a shortcut on your desktop for easy access.</li>
-                                    <li>Execute your created shortcut (You will not have to manually start the game).</li>
+                                    <li>Execute your created shortcut.</li>
+                                    <li>Run your Game as usual after the updater has closed.</li>
                                 </ol>
                                 <p>If you encounter any issues, please check the <a href="#faq" onClick={(e) => handleSmoothScroll(e, '#faq')} className="text-brand-purple hover:underline cursor-pointer">FAQ section</a> or join our <a href="https://discord.gg/exUnsW2eaa" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline">Discord server</a> for support.</p>
                                 <p className="text-sm text-gray-400 mt-2">Please be aware that Clean Ops T7 is not an open source tool.</p>
                             </motion.div>
 
                             {/* YouTube Embed */}
+                            <p className="text-sm text-gray-400 mt-8 text-center">Please note: This video is slightly outdated.</p>
                             <motion.div
-                                className="mt-8 aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg shadow-2xl border-2 border-gray-700/50"
+                                className="mt-2 aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg shadow-2xl border-2 border-gray-700/50"
                                 initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeIn}
                             >
                                 <iframe
@@ -351,6 +353,25 @@ function App() {
                                     referrerPolicy="strict-origin-when-cross-origin"
                                     allowFullScreen
                                 ></iframe>
+                            </motion.div>
+
+                            {/* ============== HOW TO UNINSTALL SECTION ============== */}
+                            <motion.div
+                                className="max-w-3xl mx-auto text-lg text-gray-300 space-y-6 mt-16"
+                                initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} variants={fadeIn}
+                            >
+                                <h2 className="text-3xl font-bold text-center mb-8">
+                                    How to Uninstall Clean Ops
+                                </h2>
+                                <p>To disable Clean Ops T7 or remove its core files:</p>
+                                <ul className="list-disc list-inside space-y-2 pl-4">
+                                    <li>
+                                        <strong>Via the Clean Ops In-Game UI:</strong> If the <code className="bg-gray-700 px-1 rounded">cleanopsT7_updater.exe</code> is still in your game directory, launch Black Ops 3, open the Clean Ops UI, go to <a href="https://github.com/notnightwolf/cleanopsT7/wiki/Full-Explanation-of-the-Ingame-User-Interface#system" className="text-brand-purple hover:underline" target="_blank" rel="noopener noreferrer">Settings -&gt; System</a>, and click the "Delete Clean Ops" button.
+                                    </li>
+                                    <li>
+                                        <strong>Manual Removal:</strong> While Call of Duty: Black Ops 3 is <strong>not</strong> running, navigate to your game's root directory (e.g., <code className="bg-gray-700 px-1 rounded break-all">C:\Program Files (x86)\Steam\steamapps\common\Call of Duty Black Ops III</code>) and delete the <code className="bg-gray-700 px-1 rounded">d3d11.dll</code> file.
+                                    </li>
+                                </ul>
                             </motion.div>
                         </div>
                     </section>
