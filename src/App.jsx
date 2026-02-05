@@ -335,6 +335,21 @@ function App() {
                                     <li>Launch the game through <strong>Steam</strong> as you normally would.</li>
                                 </ul>
                                 <p className="text-sm text-gray-400 mt-4"><strong>Linux Note:</strong> If Clean Ops doesn't load, set your Steam Launch Options to: <code className="bg-gray-700 px-1 rounded">WINEDLLOVERRIDES="d3d11=n,b" %command%</code>.</p>
+
+                                {/* YouTube Embed */}
+                                <p className="text-sm text-gray-400 mt-8">Watch our quick video guide here:</p>
+                                <div className="aspect-video max-w-3xl mx-auto overflow-hidden rounded-lg shadow-2xl border-2 border-gray-700/50 !mt-2">
+                                    <iframe
+                                        className="w-full h-full"
+                                        src="https://www.youtube.com/embed/OsUntxCPDSo"
+                                        title="Clean Ops Installation Guide"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        referrerPolicy="strict-origin-when-cross-origin"
+                                        allowFullScreen
+                                    ></iframe>
+                                </div>
+
                                 <p>If you encounter any issues, please check the <a href="#faq" onClick={(e) => handleSmoothScroll(e, '#faq')} className="text-brand-purple hover:underline cursor-pointer">FAQ section</a> or join our <a href="https://discord.gg/exUnsW2eaa" target="_blank" rel="noopener noreferrer" className="text-brand-purple hover:underline">Discord server</a> for support.</p>
                             </motion.div>
 
