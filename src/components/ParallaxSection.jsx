@@ -4,7 +4,7 @@ import React, { forwardRef, useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 // Use forwardRef to allow parent components to pass a ref to this component's <section> element
-const ParallaxSection = forwardRef(({ imageUrl, children, className, gradientClass }, ref) => {
+const ParallaxSection = forwardRef(({ imageUrl, children, className, gradientClass, id }, ref) => {
     const internalRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: internalRef,
@@ -16,6 +16,7 @@ const ParallaxSection = forwardRef(({ imageUrl, children, className, gradientCla
 
     return (
         <section
+            id={id}
             // Assign the forwarded ref here, and the internal ref for framer-motion
             ref={(node) => {
                 internalRef.current = node;

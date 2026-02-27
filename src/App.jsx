@@ -258,7 +258,7 @@ function App() {
                     </ParallaxSection>
 
                     {/* ============== DETAILED FEATURES SECTION (PARALLAX) ============== */}
-                    <ParallaxSection ref={featuresRef} imageUrl={`${import.meta.env.BASE_URL}img/bg-features.jpg`} gradientClass="bg-black/60">
+                    <ParallaxSection id="features" ref={featuresRef} imageUrl={`${import.meta.env.BASE_URL}img/bg-features.jpg`} gradientClass="bg-black/60">
                         <div className="container mx-auto px-6 py-12 md:py-24">
                             <motion.h2
                                 className="text-4xl font-bold text-center mb-12 md:mb-16"
@@ -292,6 +292,7 @@ function App() {
 
                     {/* ============== GALLERY SECTION (PARALLAX) ============== */}
                     <ParallaxSection
+                        id="gallery"
                         ref={galleryRef}
                         imageUrl={`${import.meta.env.BASE_URL}img/bg-gallery.jpg`}
                         gradientClass="bg-black/40"
@@ -316,6 +317,7 @@ function App() {
 
                     {/* ============== P2P HOSTING SECTION (PARALLAX) ============== */}
                     <ParallaxSection
+                        id="p2p"
                         ref={p2pRef}
                         imageUrl={`${import.meta.env.BASE_URL}img/bg-features.jpg`}
                         gradientClass="bg-black/70"
