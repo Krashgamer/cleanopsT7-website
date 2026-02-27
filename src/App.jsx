@@ -3,7 +3,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Routes, Route, Navigate, useLocation, useNavigate } from 'react-router-dom'; // Import Routes, Route, Navigate, useLocation, useNavigate
-import { FaShieldAlt, FaTachometerAlt, FaBug, FaUsers, FaServer, FaFlag, FaDesktop, FaExclamationTriangle, FaDiscord, FaGithub } from 'react-icons/fa';
+import { FaShieldAlt, FaTachometerAlt, FaBug, FaUsers, FaServer, FaFlag, FaDesktop, FaExclamationTriangle, FaDiscord, FaGithub, FaNetworkWired, FaCheck, FaExclamationCircle } from 'react-icons/fa';
 import { marked } from 'marked'; // Import marked
 
 // Import all our organized components
@@ -23,12 +23,12 @@ const fadeIn = {
 const featuresData = [
     { icon: <FaShieldAlt />, title: "Enhanced Security", description: "Comprehensive anti-cheat and privacy features protect you from cheaters and malicious attacks." },
     { icon: <FaExclamationTriangle />, title: "IP-Spoofing", description: "Mask your IP address from other players to prevent targeted DoS attacks." },
+    { icon: <FaNetworkWired />, title: "P2P Hosting", description: "Host your own lobby without the need for a server." },
     { icon: <FaUsers />, title: "Automatic Cheater Removal", description: "Automatically disconnects identified cheaters from your lobby using a live database." },
     { icon: <FaTachometerAlt />, title: "Performance Fixes", description: "Optimizes frame rates by disabling constant Steam DLC checks." },
     { icon: <FaServer />, title: "Server Browser", description: "Find and join active servers directly in-game with filters for region and player count." },
     { icon: <FaBug />, title: "Exploit Patching", description: "Fixes critical game-crashing exploits and prevents unfair advantages." },
-    { icon: <FaFlag />, title: "Integrated Report System", description: "Report suspected cheaters directly through the Clean Ops UI for moderator review." },
-    { icon: <FaDesktop />, title: "Full In-Game UI", description: "Access all features through a clean, intuitive interface via a single hotkey." }
+    { icon: <FaFlag />, title: "Integrated Report System", description: "Report suspected cheaters directly through the Clean Ops UI for moderator review." }
 ];
 
 
@@ -37,6 +37,7 @@ function App() {
     const heroRef = useRef(null);
     const featuresRef = useRef(null);
     const galleryRef = useRef(null);
+    const p2pRef = useRef(null);
     const featuresContainerRef = useRef(null); // Ref for the features scroll container
 
     // State for FAQs
@@ -132,7 +133,7 @@ function App() {
             // Clear any previously scheduled snap action
             clearTimeout(scrollTimeout);
 
-            const sections = [heroRef.current, featuresRef.current, galleryRef.current].filter(Boolean);
+            const sections = [heroRef.current, featuresRef.current, galleryRef.current, p2pRef.current].filter(Boolean);
             if (!sections.length) return;
 
             const viewportCenter = window.scrollY + window.innerHeight / 2;
@@ -163,7 +164,7 @@ function App() {
 
                 // Schedule the snap action
                 scrollTimeout = setTimeout(() => {
-                    if (closestSection === galleryRef.current && window.scrollY > closestSection.offsetTop + 10) {
+                    if (closestSection === p2pRef.current && window.scrollY > closestSection.offsetTop + 10) {
                         return; // Do not snap.
                     }
                     window.scrollTo({
@@ -311,6 +312,86 @@ function App() {
                         >
                             <ImageGallery />
                         </motion.div>
+                    </ParallaxSection>
+
+                    {/* ============== P2P HOSTING SECTION (PARALLAX) ============== */}
+                    <ParallaxSection
+                        ref={p2pRef}
+                        imageUrl={`${import.meta.env.BASE_URL}img/bg-features.jpg`}
+                        gradientClass="bg-black/70"
+                        className="flex flex-col p-4 sm:p-6 md:p-8"
+                    >
+                        <div className="container mx-auto px-6 py-8 md:py-16 max-w-5xl">
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeIn}
+                                className="text-center mb-8 md:mb-12"
+                            >
+                                <span className="inline-flex items-center gap-2 bg-purple-500/20 text-purple-300 text-sm font-semibold px-4 py-1.5 rounded-full mb-4 border border-purple-500/30">
+                                    <FaNetworkWired /> P2P Hosting
+                                </span>
+                                <h2 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+                                    Host Your Own
+                                    <span className="bg-gradient-to-r from-purple-400 to-purple-600 text-transparent bg-clip-text"> Sessions</span>
+                                </h2>
+                                <p className="text-gray-300 text-lg mt-4 max-w-2xl mx-auto">
+                                    Take the power into your own hands. With Clean Ops, you can host your own P2P sessions - keeping multiplayer alive, independent of any official servers.
+                                </p>
+                            </motion.div>
+
+                            <motion.div
+                                initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.2 }} variants={fadeIn}
+                                className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12"
+                            >
+                                {/* P2P UI Image */}
+                                <div className="flex-shrink-0 relative group">
+                                    <div className="absolute -inset-1 bg-gradient-to-r from-purple-600 to-purple-400 rounded-xl blur-md opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+                                    <img
+                                        src={`${import.meta.env.BASE_URL}img/p2p-1.jpg`}
+                                        alt="Clean Ops P2P Hosting Settings UI"
+                                        className="relative rounded-xl border-2 border-purple-500/30 shadow-2xl shadow-purple-900/30 w-full"
+                                        style={{ maxWidth: '408px', aspectRatio: '1 / 1', objectFit: 'cover' }}
+                                    />
+                                </div>
+
+                                {/* Text Content */}
+                                <div className="text-left space-y-5">
+                                    <h3 className="text-2xl font-bold text-white">How It Works</h3>
+                                    <p className="text-gray-300">
+                                        Clean Ops lets any player become a session host - no dedicated server needed. Open the <strong className="text-white">"Sessions"</strong> tab in the in-game UI and configure your lobby in seconds.
+                                    </p>
+
+                                    <ul className="space-y-3">
+                                        <li className="flex items-start gap-3">
+                                            <FaCheck className="text-green-400 mt-1 flex-shrink-0" />
+                                            <span className="text-gray-300"><strong className="text-white">Set Your Region</strong> - Advertise your lobby to players in your area for the best connection quality.</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FaCheck className="text-green-400 mt-1 flex-shrink-0" />
+                                            <span className="text-gray-300"><strong className="text-white">Enable "Force Host"</strong> - Activates hosting mode - now search for a Public Match to open your lobby.</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FaCheck className="text-green-400 mt-1 flex-shrink-0" />
+                                            <span className="text-gray-300"><strong className="text-white">Adjust Min Players</strong> - Control how many players are needed before the match countdown begins.</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                            <FaCheck className="text-green-400 mt-1 flex-shrink-0" />
+                                            <span className="text-gray-300"><strong className="text-white">DLC Control</strong> - Keep "Force Non-DLC Lobby" checked for maximum player reach, or uncheck it to play DLC maps.</span>
+                                        </li>
+                                    </ul>
+
+                                    {/* Security Warning */}
+                                    <div className="mt-4 bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4 flex items-start gap-3">
+                                        <FaExclamationCircle className="text-yellow-400 mt-0.5 flex-shrink-0 text-lg" />
+                                        <div>
+                                            <p className="text-yellow-200 font-semibold text-sm">Security Notice</p>
+                                            <p className="text-yellow-100/80 text-sm mt-1">
+                                                Hosting a P2P session exposes your IP address. We <strong>strongly recommend using a VPN</strong> (e.g. <a href="https://mullvad.net/" target="_blank" rel="noopener noreferrer" className="underline text-yellow-200 hover:text-yellow-100">Mullvad VPN</a>) to protect your privacy and prevent potential network attacks.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </motion.div>
+                        </div>
                     </ParallaxSection>
 
                     {/* ============== HOW TO INSTALL SECTION ============== */}
